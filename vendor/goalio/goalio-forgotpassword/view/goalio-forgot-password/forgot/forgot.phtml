@@ -1,0 +1,33 @@
+<?php
+$form = $this->forgotForm;
+$form->prepare();
+$form->setAttribute('action', $this->url('zfcuser/forgotpassword'));
+$form->setAttribute('method', 'post');
+?>
+
+
+
+<!-- Password recovery -->
+				<?php echo $this->form()->openTag($form) ?>
+					<div class="panel panel-body login-form">
+						<div class="text-center">
+							<div class="icon-object border-warning text-warning"><i class="icon-spinner11"></i></div>
+							<h5 class="content-group">Passwort vergessen <small class="display-block">Sie erhalten eine E-Mail zum Zurücksetzen des Passworts</small></h5>
+						</div>
+
+						<div class="form-group has-feedback">
+							<input type="email" name="email" class="form-control" placeholder="E-Mail">
+							<div class="form-control-feedback">
+								<i class="icon-mail5 text-muted"></i>
+							</div>
+						</div>
+<div class="form-group">
+						<button type="submit" class="btn bg-blue btn-block">Passwort zurücksetzen <i class="icon-arrow-right14 position-right"></i></button>
+					</div>
+					<div class="text-center">
+							<a href="<?php echo $this->url('zfcuser/login') ?>">Zurück zum Login</a>
+						</div>
+					</div>
+				<?php echo $this->form()->closeTag() ?>
+				<!-- /password recovery -->
+				

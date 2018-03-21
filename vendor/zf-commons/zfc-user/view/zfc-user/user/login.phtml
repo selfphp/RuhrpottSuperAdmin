@@ -1,0 +1,49 @@
+<h1><?php echo $this->translate('Sign In'); ?></h1>
+
+<?php
+$form = $this->loginForm;
+$form->prepare();
+$form->setAttribute('action', $this->url('zfcuser/login'));
+$form->setAttribute('method', 'post');
+$form->setAttribute('autocomplete', 'off');
+?>
+
+<?php echo $this->partial('_form.phtml', ['form' => $form]); ?>
+
+<?php if ($this->enableRegistration) : ?>
+<?php echo $this->translate('Not registered?'); ?> 1 <a href="<?php echo $this->url('zfcuser/register') . ($this->redirect ? '?redirect='.$this->escapeUrl($this->redirect) : '') ?>"><?php echo $this->translate('Sign up!'); ?></a>
+<?php endif; ?>
+
+
+<!-- Simple login form -->
+				<form action="/user/login" method="post" autocomplete="off">
+					<div class="panel panel-body login-form">
+						<div class="text-center">
+							<div class="icon-object border-slate-300 text-slate-300"><i class="icon-reading"></i></div>
+							<h5 class="content-group">Account Login <small class="display-block">Geben Sie Ihre Daten ein!</small></h5>
+						</div>
+
+						<div class="form-group has-feedback has-feedback-left">
+							<input type="text" name="identity" class="form-control" placeholder="E-Mail">
+							<div class="form-control-feedback">
+								<i class="icon-user text-muted"></i>
+							</div>
+						</div>
+
+						<div class="form-group has-feedback has-feedback-left">
+							<input type="password" name="credential" class="form-control" placeholder="Passwort">
+							<div class="form-control-feedback">
+								<i class="icon-lock2 text-muted"></i>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<button type="submit" class="btn btn-primary btn-block">Anmelden <i class="icon-circle-right2 position-right"></i></button>
+						</div>
+
+						<div class="text-center">
+							<a href="/user/forgot-password">Passwort vergessen?</a>
+						</div>
+					</div>
+				</form>
+				<!-- /simple login form -->

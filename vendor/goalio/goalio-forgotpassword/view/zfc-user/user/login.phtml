@@ -1,0 +1,33 @@
+<?php
+$form = $this->loginForm;
+$form->prepare();
+$form->setAttribute('action', $this->url('zfcuser/login'));
+$form->setAttribute('method', 'post');
+?>
+
+<!-- Login -->
+<div class="middle-box text-center loginscreen animated fadeInDown">
+        <div>
+            <div>
+                <h1 class="logo-name"><?php echo $this->translate("Q+"); ?></h1>
+            </div>
+            <h3><?php echo $this->translate("Welcome to Q+"); ?></h3>
+            <p><?php echo $this->translate("Agile project management."); ?></p>
+            <p><?php echo $this->translate("Login in. To see it in action."); ?></p>
+            
+            <form class="m-t" role="form" action="/user/login" method="post" autocomplete="off">
+                <div class="form-group">
+                    <input type="email" name="identity" class="form-control" placeholder="<?php echo $this->translate("E-Mail"); ?>" required="">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="credential" class="form-control" placeholder="<?php echo $this->translate("Password"); ?>" required="">
+                </div>
+                <p><?php echo $this->formElementErrors($form->get('identity')) ?></p>
+                <button type="submit" class="btn btn-primary block full-width m-b"><?php echo $this->translate("Login"); ?></button>
+                <a href="/user/forgot-password"><small><?php echo $this->translate("Forgot password?"); ?></small></a>
+            </form>
+            <p class="m-t"> <small>&copy; 2017 by <a href="http://www.selfphp.de" class="navbar-link" target="_blank">SELFPHP OHG</a></small> </p>
+        </div>
+    </div>
+<!-- Login -->
+

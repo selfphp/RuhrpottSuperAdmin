@@ -1,0 +1,71 @@
+<h1><?php echo $this->translate('Sign In'); ?>s</h1>
+
+<?php
+$form = $this->loginForm;
+$form->prepare();
+$form->setAttribute('action', $this->url('zfcuser/login'));
+$form->setAttribute('method', 'post');
+?>
+s
+<?php echo $this->form()->openTag($form) ?>
+
+    <dl class="zend_form">
+        <?php echo $this->formElementErrors($form->get('identity')) ?>
+
+        <dt><?php echo $this->formLabel($form->get('identity')) ?></dt>
+        <dd><?php echo $this->formInput($form->get('identity')) ?></dd>
+
+        <dt><?php echo $this->formLabel($form->get('credential')) ?></dt>
+        <dd><?php echo $this->formInput($form->get('credential')) ?></dd>
+
+        <?php if ($this->redirect): ?>
+            <input type="hidden" name="redirect" value="<?php echo $this->escapeHtml($this->redirect) ?>" />
+        <?php endif ?>
+
+        <dd><?php echo $this->formButton($form->get('submit')) ?></dd>
+    </dl>
+
+<?php echo $this->form()->closeTag() ?>
+
+<p><a href="<?php echo $this->url('zfcuser/forgotpassword') ?>"><?php echo $this->translate("Forgot your password?"); ?></a></p>
+
+<?php if ($this->enableRegistration) : ?>
+<?php echo $this->translate('Not registered?'); ?> <a href="<?php echo $this->url('zfcuser/register') . ($this->redirect ? '?redirect='.$this->redirect : '') ?>"><?php echo $this->translate('Sign up!'); ?></a>
+<?php endif; ?>
+
+<!-- Simple login form -->
+				<form action="/user/login" method="post" autocomplete="off">
+					<div class="panel panel-body login-form">
+						<div class="text-center">
+							<div class="icon-object border-slate-300 text-slate-300"><i class="icon-reading"></i></div>
+							<h5 class="content-group">Account Login <small class="display-block">Geben Sie Ihre Daten ein!</small></h5>
+						</div>
+
+						<div class="form-group has-feedback has-feedback-left">
+							<input type="text" name="identity" class="form-control" placeholder="E-Mail">
+							<div class="form-control-feedback">
+								<i class="icon-user text-muted"></i>
+							</div>
+						</div>
+
+						<div class="form-group has-feedback has-feedback-left">
+							<input type="password" name="credential" class="form-control" placeholder="Passwort">
+							<div class="form-control-feedback">
+								<i class="icon-lock2 text-muted"></i>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<button type="submit" class="btn btn-primary btn-block">Anmelden <i class="icon-circle-right2 position-right"></i></button>
+						</div>
+
+						<div class="text-center">
+							<a href="/user/forgot-password">Passwort vergessen?</a>
+						</div>
+						<div class="text-center">
+							<?php echo $this->formElementErrors($form->get('identity')) ?>
+						</div>
+						
+					</div>
+				</form>
+				<!-- /simple login form -->

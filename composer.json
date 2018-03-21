@@ -1,21 +1,30 @@
 {
-  "name" : "tyre24-scanner",
-  "description" : "Skeleton Application for ZF2",
-  "require" : {
-    "php" : ">=5.5",
-    "zendframework/zendframework" : "~2.5",
-    "zf-commons/zfc-base" : "v0.1.2",
-    "zf-commons/zfc-user" : "1.4.4",
-    "bjyoungblood/bjy-authorize" : "1.4.0",
-    "zendframework/zend-developer-tools" : "1.1.1",
-    "san/san-session-toolbar" : "1.0.4",
-    "jer/jer-route-layouts" : "dev-master",
-    "goalio/goalio-forgotpassword" : "1.0.2",
-    "enrise/zf-elasticsearch" : "1.0.1",
-    "knplabs/github-api" : "2.6.0",
-    "php-http/guzzle6-adapter" : "v1.1.1"
-  },
-  "license" : "BSD-3-Clause",
-  "keywords" : [ "framework", "zf2" ],
-  "homepage" : "http://framework.zend.com/"
+	"name" : "Ruhrpottpoker Super Admin",
+	"description" : "Administration for Ruhrpott Poker",
+	"require" : {
+		"php" : ">=5.5",
+		"zendframework/zendframework" : "~2.5",
+		"zf-commons/zfc-base" : "v0.1.2",
+		"zf-commons/zfc-user" : "1.4.4",
+		"bjyoungblood/bjy-authorize" : "1.4.0",
+		"zendframework/zend-developer-tools" : "1.1.1",
+		"san/san-session-toolbar" : "1.0.4",
+		"jer/jer-route-layouts" : "dev-master",
+		"goalio/goalio-forgotpassword" : "1.0.2",
+		"enrise/zf-elasticsearch" : "1.0.1",
+		"knplabs/github-api" : "2.6.0",
+		"php-http/guzzle6-adapter" : "v1.1.1"
+	},
+	"license" : "BSD-3-Clause",
+	"keywords" : [
+		"ZF2 Framework"
+	],
+	"homepage" : "http://framework.zend.com/",
+	"authors" : [{
+			"name" : "Damir Enseleit",
+			"email" : "damir.enseleit@selfphp.de",
+			"homepage" : "http://www.selfphp.de",
+			"role" : "Admin"
+		}
+	]
 }

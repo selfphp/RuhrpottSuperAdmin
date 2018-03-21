@@ -1,0 +1,1 @@
+View: \vendor\goalio\goalio-forgotpassword\view\zfc-user\user\login.phtml

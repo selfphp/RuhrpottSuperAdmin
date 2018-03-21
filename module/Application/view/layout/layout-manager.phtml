@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Qozido - Agile project management</title>
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="/css/animate.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    
+    <!-- Mainly scripts -->
+<script src="/js/jquery-3.1.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="/js/inspinia.js"></script>
+<script src="/js/plugins/pace/pace.min.js"></script>
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Damir Enseleit</strong>
+                             </span> <span class="text-muted text-xs block">Projekt Manager <b class="caret"></b></span> </span> </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a href="/user/logout">Logout</a></li>
+                            </ul>
+                    </div>
+                    <div class="logo-element">
+                        Q+
+                    </div>
+                </li>
+                <li <?php if($this->currentControllerName == "timeline"){?>class="active"<?php } ?>>
+                    <a href="/timeline"><i class="fa fa-tachometer"></i> <span class="nav-label">Zeitlinie</span></a>
+                </li>
+                <li <?php if($this->currentControllerName == "epics"){?>class="active"<?php } ?>>
+                    <a href="/epics"><i class="fa fa-th-list"></i> <span class="nav-label">Epics</span> </a>
+                </li>
+                <li <?php if($this->currentControllerName == "backlog"){?>class="active"<?php } ?>>
+                    <a href="/backlog"><i class="fa fa-th-large"></i> <span class="nav-label">Backlog</span><span class="fa arrow"></span> </a>
+                    <ul class="nav nav-second-level collapse">
+                    	<li><a href="icons.html">Icons</a></li>
+                        <li><a href="draggable_panels.html">Draggable Panels</a></li> <li><a href="resizeable_panels.html">Resizeable Panels</a></li>
+                        <li><a href="buttons.html">Buttons</a></li>
+                        <li><a href="video.html">Video</a></li>
+                        <li><a href="tabs_panels.html">Panels</a></li>
+                        <li><a href="tabs.html">Tabs</a></li>
+                        <li><a href="notifications.html">Notifications & Tooltips</a></li>
+                        <li><a href="helper_classes.html">Helper css classes</a></li>
+                        <li><a href="badges_labels.html">Badges, Labels, Progress</a></li>
+                    </ul>
+                </li>
+                <li <?php if($this->currentControllerName == "kanban"){?>class="active"<?php } ?>>
+                    <a href="/kanban"><i class="fa fa-paperclip"></i> <span class="nav-label">Kanban</span> </a>
+                </li>
+                <li <?php if($this->currentControllerName == "tickets"){?>class="active"<?php } ?>>
+                    <a href="/tickets"><i class="fa fa-ticket"></i> <span class="nav-label">Tickets</span> </a>
+                </li>
+                <li <?php if($this->currentControllerName == "wiki"){?>class="active"<?php } ?>>
+                    <a href="/wiki"><i class="fa fa-book"></i> <span class="nav-label">Wiki</span> </a>
+                </li>
+                <li <?php if($this->currentControllerName == "team"){?>class="active"<?php } ?>>
+                    <a href="/team"><i class="fa fa-users"></i> <span class="nav-label">Team</span> </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                    <form role="search" class="navbar-form-custom" method="post" action="#">
+                        <div class="form-group">
+                            <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
+                        </div>
+                    </form>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <a href="/user/logout">
+                            <i class="fa fa-sign-out"></i> Log out
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+        </div>
+        
+        
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <?php echo $this->content; ?>            
+        </div>
+        <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                &copy; 2017 by <a href="http://www.selfphp.de" class="navbar-link" target="_blank">SELFPHP OHG</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<?php if( $this->globalData['user']['userData']['navbar'] == 1 ): ?>
+<script>
+$(document).ready(function(){
+	$("body").toggleClass("mini-navbar");
+});
+</script>
+<?php endif; ?>
+
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<div class="row">
+	<div class="ibox-content m-b-sm border-bottom">
+		<div class="p-xs">
+			<div class="pull-left m-r-md">
+				<i class="fa fa-cubes text-navy mid-icon"></i>
+			</div>
+			<h2><?php echo $this->translate("Project list"); ?></h2>
+			<span><?php echo $this->translate("Feel free to create a new project."); ?></span>
+			<div class="pull-right m-r-md">
+				<div class="ibox-tools">
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                                <?php echo $this->translate("Create new project"); ?>
+                    </button>
+				</div>
+			</div>
+		</div>
+	</div>
+                        
+ 
+	<div class="ibox">
+		<div class="ibox-content">
+			<div class="row m-b-sm m-t-sm">
+				<div class="col-md-12">
+					<div class="input-group">
+						<input type="text" placeholder="<?php echo $this->translate("Search in projects"); ?>" class="input-sm form-control">
+						<span class="input-group-btn">
+							<button type="button" class="btn btn-sm btn-primary"> <?php echo $this->translate("Go!"); ?></button>
+						</span>
+					</div>
+				</div>
+			</div>
+		
+			<div class="tabs-container">
+				<ul class="nav nav-tabs">
+					<li class="active"><a data-toggle="tab" href="#tab-1"><?php echo $this->translate("Prioritized"); ?> (3)</a></li>
+					<li class=""><a data-toggle="tab" href="#tab-2"><?php echo $this->translate("Active"); ?> (5)</a></li>
+					<li class=""><a data-toggle="tab" href="#tab-3"><?php echo $this->translate("Inactive"); ?> (2)</a></li>
+					<li class=""><a data-toggle="tab" href="#tab-4"><?php echo $this->translate("Upcoming"); ?> (6)</a></li>
+					<li class=""><a data-toggle="tab" href="#tab-5"><?php echo $this->translate("Done"); ?> (23)</a></li>
+				</ul>
+			
+				<div class="tab-content">
+				    <!-- Tab #1 -->
+					<div id="tab-1" class="tab-pane active">
+						<div class="panel-body">
+							<div class="project-list">
+								Tab #1
+							</div>
+						</div>
+					</div>
+					<!-- Tab #2 -->
+					<div id="tab-2" class="tab-pane">
+						<div class="panel-body">
+							<div class="project-list">
+								Tab #2
+							</div>
+						</div>
+					</div>
+					<!-- Tab #3 -->
+					<div id="tab-3" class="tab-pane">
+						<div class="panel-body">
+							<div class="project-list">
+								Tab #3
+							</div>
+						</div>
+					</div>
+					<!-- Tab #4 -->
+					<div id="tab-4" class="tab-pane">
+						<div class="panel-body">
+							<div class="project-list">
+								Tab #4
+							</div>
+						</div>
+					</div>
+					<!-- Tab #5 -->
+					<div id="tab-5" class="tab-pane">
+						<div class="panel-body">
+							<div class="project-list">
+								Tab #5
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog">
+                                <div class="modal-content animated bounceInRight">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                            <div id="upps-no">
+                                            	<i class="fa fa-cubes modal-icon"></i>
+                                            	<h4 class="modal-title"><?php echo $this->translate("Project"); ?></h4>
+                                            	<small class="font-bold"><?php echo $this->translate("There are only a few steps to a new project"); ?></small>
+                                            </div>
+                                            <div id="uppsworkflow" style="display:none;">
+                                            	<img src="/img/upps.png">
+                                            	<h4 class="modal-title"><?php echo $this->translate("UPPS"); ?></h4>
+                                            	<small class="font-bold"><?php echo $this->translate("We can not work without a workflow!"); ?></small>
+                                            </div>
+                                            <div id="uppsname" style="display:none;">
+                                            	<img src="/img/upps.png">
+                                            	<h4 class="modal-title"><?php echo $this->translate("UPPS"); ?></h4>
+                                            	<small class="font-bold"><?php echo $this->translate("Our project still needs a name!"); ?></small>
+                                            </div>
+                                            <div id="coolproject" style="display:none;">
+                                            	<img src="/img/cool.png">
+                                            	<h4 class="modal-title"><?php echo $this->translate("COOL"); ?></h4>
+                                            	<small class="font-bold"><?php echo $this->translate("We have a new project. Let's get started!"); ?></small>
+                                            </div>	
+                                        </div>
+                                        <div class="modal-body">
+                                            <p><?php echo $this->translate("I need only <strong>2 information</strong> and I can create the project for you. You can add more things to the project later!"); ?><strong></p>
+                                                    <div class="form-group">
+                                                    	<label><?php echo $this->translate("Project name"); ?></label> <input type="email" id="project_name" name="project_name" placeholder="Enter your project name" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                    	<label><?php echo $this->translate("Choose a workflow"); ?></label> 
+                                                    	<div class="i-checks"><label> <input id="scrum" name="scrum" type="checkbox" > <i></i> SCRUM </label></div>
+                                                    	<div class="i-checks"><label> <input id="kanban" name="kanban" type="checkbox" > <i></i> KANBAN </label></div>
+                                                    </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-white" data-dismiss="modal"><?php echo $this->translate("Close"); ?></button>
+                                            <button type="button" id="createproject" class="btn btn-primary"><?php echo $this->translate("Save project"); ?></button>
+                                            <button type="button" id="manageproject" class="btn btn-primary" style="display:none;"><?php echo $this->translate("Manage the project"); ?></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>	               
+                            
+<script src="/js/plugins/iCheck/icheck.min.js"></script>
+<script src="/js/qap/projects.js"></script>                
+<script>
+	$(document).ready(function(){
+
+		$('#loading-example-btn').click(function () {
+			btn = $(this);
+			simpleLoad(btn, true)
+			simpleLoad(btn, false)
+		});
+
+		$('.i-checks').iCheck({
+            checkboxClass: 'icheckbox_square-green',
+            radioClass: 'iradio_square-green',
+        });
+	});
+</script>    

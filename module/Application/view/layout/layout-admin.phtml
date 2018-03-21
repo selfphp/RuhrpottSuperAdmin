@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Qozido - Agile project management</title>
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+   
+
+    <link href="/css/animate.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    
+    <!-- Mainly scripts -->
+<script src="/js/jquery-3.1.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="/js/inspinia.js"></script>
+<script src="/js/plugins/pace/pace.min.js"></script>
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Damir Enseleit</strong>
+                             </span> <span class="text-muted text-xs block">Projekt Manager <b class="caret"></b></span> </span> </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a href="/profil/edit">Profil</a></li>
+                                <li><a href="/user/logout">Logout</a></li>
+                            </ul>
+                    </div>
+                    <div class="logo-element">
+                        Q+
+                    </div>
+                </li>
+                <li <?php if($this->currentControllerName == "timeline"){?>class="active"<?php } ?>>
+                    <a href="/admin/projects"><i class="fa fa-cubes"></i> <span class="nav-label">Projekte</span></a>
+                </li>
+                <li <?php if($this->currentControllerName == "epics"){?>class="active"<?php } ?>>
+                    <a href="/epics"><i class="fa fa-th-list"></i> <span class="nav-label">Team</span> </a>
+                </li>
+                <li <?php if($this->currentControllerName == "kanban"){?>class="active"<?php } ?>>
+                    <a href="/kanban"><i class="fa fa-paperclip"></i> <span class="nav-label">Einstellungen</span> </a>
+                </li>
+                
+            </ul>
+
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                    <form role="search" class="navbar-form-custom" method="post" action="#">
+                        <div class="form-group">
+                            <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
+                        </div>
+                    </form>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <a href="/user/logout">
+                            <i class="fa fa-sign-out"></i> Log out
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+        </div>
+        
+        
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <?php echo $this->content; ?>            
+        </div>
+        <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                &copy; 2017 by <a href="http://www.selfphp.de" class="navbar-link" target="_blank">SELFPHP OHG</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<?php if( $this->globalData['user']['userData']['navbar'] == 1 ): ?>
+<script>
+$(document).ready(function(){
+	$("body").toggleClass("mini-navbar");
+});
+</script>
+<?php endif; ?>
+</body>
+
+</html>
